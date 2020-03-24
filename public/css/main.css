@@ -8,6 +8,7 @@
 body {
     font-family: 'Akkurat Pro';
     padding: 10px;
+    background-color: red;
 }
 
 h1 {
@@ -46,4 +47,8 @@ a {
 
 .logo-container img {
     height: 40px;
+}
+
+.green {
+    background-color: green;
 }
