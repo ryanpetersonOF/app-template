@@ -1,12 +1,17 @@
-initChannels();
+initChannel('channel1');
+initChannel('channel2');
+initChannel('channel3');
 
-async function initChannels() {
-    const provider = await fin.InterApplicationBus.Channel.connect('channelName');
-    console.log('connected');
+async function initChannel(name) {
+    const el = document.getElementById(name);
+    const provider = await fin.InterApplicationBus.Channel.connect(name);
+    
+    console.log('connected', provider);
+    el.setAttribute('class', 'green');
 
     provider.onDisconnection(channelInfo => {
-        // handle the channel lifecycle here - we can connect again which will return a promise
-        // that will resolve if/when the channel is re-created.
-        console.log('disconnect', channelInfo);
+        el.setAttribute('class', 'yellow');
+        console.log('disconnected', channelInfo);
+        initChannels();
     })
 }

@@ -13,6 +13,20 @@
 <body>
     <button onclick="launchProvider()">Launch Provider</button>
     <button onclick="launchClient()">Launch Client</button>
+    <h4>Problem</h4>
+    Creating multiple channels providers will cause all but the first providers clients onDisconnection listeners to fail.
+    <h4>Repro steps</h4>
+    <ol>
+        <li>Launch Client</li>
+        <li>Launch Provider (this creates multiple providers in code)</li>
+        <li>Observe Green client backgrounds (connected to provider)</li>
+        <li>Close Provider</li>
+        <li>Observe single yellow background (onDisconnection fired)</li>
+        <li>Observe onDisconnection listener never fired for clients (still green background)</li>
+        <li>Remove channel.create() call in js/provider.js</li>
+        <li>Rinse and repeat</li>
+        <li>Observe client onDisconnection firing (red/yellow background)</li>
+    </ol>
     <script src="js/main.js"></script>
 </body>
 

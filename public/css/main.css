@@ -20,6 +20,7 @@ h2 {
     font-size: 40px;
     line-height: 48px;
     font-weight: 400;
+    margin: 10px;
 }
 
 h3 {
@@ -46,4 +47,21 @@ a {
 
 .logo-container img {
     height: 40px;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+#channel1, #channel2, #channel3 {
+    height: 30px;
+    margin-bottom:5px;
 }

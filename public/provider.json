@@ -5,11 +5,12 @@
         "uuid": "testprovider",
         "applicationIcon": "http://localhost:5555/favicon.ico",
         "autoShow": true,
-        "saveWindowState": true
+        "saveWindowState": true,
+        "defaultHeight": 350,
+        "defaultWidth": 250
     },
     "runtime": {
-        "arguments": "--enable-aggressive-domstorage-flushing --security-realm=of-notifications-service --enable-mesh",
-        "version": "14.78.48.15"
+        "version": "15.80.48.13"
     },
     "shortcut": {
         "company": "OpenFin",
