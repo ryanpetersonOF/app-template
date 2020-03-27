@@ -12,6 +12,6 @@ async function initChannel(name) {
     provider.onDisconnection(channelInfo => {
         el.setAttribute('class', 'yellow');
         console.log('disconnected', channelInfo);
-        initChannels();
+        initChannel(name);
     })
 }
