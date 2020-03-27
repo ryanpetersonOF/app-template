@@ -5,7 +5,9 @@
         "uuid": "testclient",
         "applicationIcon": "http://localhost:5555/favicon.ico",
         "autoShow": true,
-        "saveWindowState": true
+        "saveWindowState": true,
+        "defaultHeight": 350,
+        "defaultWidth": 250
     },
     "runtime": {
         "arguments": "",
@@ -14,7 +16,7 @@
     "shortcut": {
         "company": "OpenFin",
         "description": "Openfin POC",
-        "icon": "http://localhost:5556/favicon.ico",
+        "icon": "http://localhost:5555/favicon.ico",
         "name": "Openfin POC"
     }
 }

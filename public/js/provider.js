@@ -1,7 +1,9 @@
-
 initChannels();
 
 async function initChannels() {
+    // Remove me to make all of your problems go away
+    await fin.InterApplicationBus.Channel.create('channelNamexyz');
+
     const provider = await fin.InterApplicationBus.Channel.create('channelName');
     console.log('channel created')
 
@@ -11,12 +13,5 @@ async function initChannels() {
 
     await provider.onDisconnection(evt => {
         console.log('Client disconnected', `uuid: ${evt.uuid}, name: ${evt.name}`);
-    })
-
-    await provider.register('provider-action', (payload, identity) => {
-       console.log('Action dispatched by client: ', identity);
-       console.log('Payload sent in dispatch: ', payload);
-
-       return { echo: payload };
-   });
+    });
 }

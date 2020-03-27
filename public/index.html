@@ -13,6 +13,26 @@
 <body>
     <button onclick="launchProvider()">Launch Provider</button>
     <button onclick="launchClient()">Launch Client</button>
+    <h4>Problem</h4>
+    Creating two channel providers will cause the seconds onDisconnection listener to fail for clients.
+    <h4>Repro steps</h4>
+    <ol>
+        <li>Launch Client</li>
+        <li>Launch Provider (this creates two providers back to back in code)</li>
+        <li>Observe Green background (connected to provider)</li>
+        <li>Close Provider</li>
+        <li>Observe onDisconnection listener never fired for client (still green background, should be yellow or red)</li>
+        <li>Remove first channel.create() call in js/provider.js</li>
+        <li>Rinse and repeat</li>
+        <li>Observe client onDisconnection firing (red/yellow background)</li>
+    </ol>
+
+    <h2>Notes</h2>
+    <ul>
+        <li>Same runtime seems to work</li>
+        <li>If the provider is created in a second window/app of an already running runtime, the issue does not occur</li>
+        <li>You do not need to create the two providers back to back. They can occur in different parts of the code and the issue remains. This can be seen in the <a href="https://github.com/openfin/notifications">Notifications Demo</a> - open the console for any of the demo apps, then close the service provider window. Compare to reloading the service provider window.</li>
+    </ul>
     <script src="js/main.js"></script>
 </body>
 
