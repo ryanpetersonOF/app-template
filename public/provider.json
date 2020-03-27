@@ -1,15 +1,15 @@
 {
     "startup_app": {
-        "name": "OpenfinPOC",
-        "url": "http://localhost:5555/index.html",
-        "uuid": "OpenfinPOC",
+        "name": "testprovider",
+        "url": "http://localhost:5555/provider.html",
+        "uuid": "testprovider",
         "applicationIcon": "http://localhost:5555/favicon.ico",
         "autoShow": true,
         "saveWindowState": true
     },
     "runtime": {
-        "arguments": "",
-        "version": "15.80.48.13"
+        "arguments": "--enable-aggressive-domstorage-flushing --security-realm=of-notifications-service --enable-mesh",
+        "version": "14.78.48.15"
     },
     "shortcut": {
         "company": "OpenFin",
