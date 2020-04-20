@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title></title>
+
+    <script src="dist/test.js" async></script>
+
+    <style>
+        body>div {
+
+            display: none;
+
+            margin-bottom: 10px;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="main">
+
+        <button id="toggle-notification-center">Toggle notification center</button>
+
+        <button id="show-notification">Show new notification</button>
+
+        <label for="notification-actions"><input type="checkbox" id="notification-actions" name="notification-actions">
+            With notification actions</label>
+
+        <h3>Visible notifications</h3>
+
+        <ul id="visible-notifications">
+
+        </ul>
+
+        <br />
+
+        <button id="create-new-window">Create new window</button>
+
+        <input type="checkbox" id="separate-process" /><label for="separate-process">Separate process</label>
+
+        <br />
+
+        <button id="go-fullscreen">Go fullscreen</button>
+
+    </div>
+
+    <div id="child">
+
+        <button id="register">Register</button>
+
+        <button id="deregister">Deregister</button>
+
+        <button id="undock">Undock</button>
+
+    </div>
+
+    <div id="all">
+
+        <button id="undock-group">Undock group</button>
+
+        <button id="send-fdc3-intent">Send FDC3 intent</button>
+
+        <button id="send-fdc3-context">Send FDC3 context</button>
+
+        <div>
+
+            <a href="https://localhost:3000/">https://localhost:3000/</a> <br />
+
+            <a href="https://bbc.co.uk/">https://bbc.co.uk/</a>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

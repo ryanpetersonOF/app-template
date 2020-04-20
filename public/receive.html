@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>
+FDC3 Receiver
+</title>
+<script language="javascript">
+
+
+function fdc3Init(callback){
+  let fdc3Tries = 10; //lets not check forever...
+  const onFDC3Ready = () => {
+    if (window.fdc3) {
+        callback.call(this);
+    }
+    else {
+      if (fdc3Tries > 0){
+        fdc3Tries--;
+        window.setTimeout(onFDC3Ready,100);
+      }
+    }
+  };
+  onFDC3Ready();
+}
+  
+window.addEventListener("DOMContentLoaded",() => {
+  fdc3Init(function(){
+    enablePage();
+  });
+});
+
+function enablePage(){
+
+	console.log('FDC3 is available');
+	
+	document.getElementById('providerDetails').innerHTML = 'Available - Not specified';
+	
+	fdc3.addContextListener(function(ctx){ 
+			//alert(JSON.stringify(ctx));
+			document.getElementById('txtContextData').value = JSON.stringify(ctx) + '\n-----------\n' + document.getElementById('txtContextData').value;
+		});
+	
+}
+
+
+	
+</script>
+</head>
+<body>
+<table border="1" style="width:100%;height:100%;">
+<tr style="height:200px;">
+<td>
+<table style="width:100%;height:100%;">
+<tr style="height:50px;">
+<td style="text-align:center;"><b><span id="providerDetails">FDC3 Not Available</span> - Context Received:</b></td>
+</tr>
+<tr style="height:100%">
+<td><textarea style="width:100%;height:100%;" id="txtContextData"></textarea></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr style="height:50px;">
+<td>
+<table>
+<tr>
+<td>
+<input type="button" value="Clear!" onClick="document.getElementById('txtContextData').value='';">
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>

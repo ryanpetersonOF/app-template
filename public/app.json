@@ -1,20 +1,35 @@
 {
-    "startup_app": {
-        "name": "OpenfinPOC",
-        "url": "http://localhost:5555/index.html",
-        "uuid": "OpenfinPOC",
-        "applicationIcon": "http://localhost:5555/favicon.ico",
-        "autoShow": true,
-        "saveWindowState": true
-    },
-    "runtime": {
-        "arguments": "",
-        "version": "stable"
-    },
-    "shortcut": {
-        "company": "OpenFin",
-        "description": "Openfin POC",
-        "icon": "http://localhost:5555/favicon.ico",
-        "name": "Openfin POC"
-    }
+	"startup_app": {
+		"name": "OpenfinPOC",
+		"url": "http://localhost:5555/test.html",
+		"uuid": "OpenfinPOC-j0ggaw6ro2j",
+		"autoShow": true,
+		"defaultCentered": true,
+		"saveWindowState": false,
+		"defaultHeight": 778,
+		"defaultWidth": 728,
+		"contentNavigation": {
+
+			"whitelist": [
+			
+			"http://localhost:5555/*"
+			
+			]
+			
+			}
+	},
+	"runtime": {
+		"arguments": "--allow-insecure-localhost --disable-web-security --unsafely-treat-insecure-origin-as-secure=https://localhost:5555",
+
+		"version": "14.78.48.15"
+	},
+	"services": [
+		{
+			"name": "notifications"
+		},
+		{
+			"name": "fdc3"
+		}
+	]
+	
 }

@@ -1,0 +1,17 @@
+{
+	"startup_app": {
+		"name": "FDC3 Explained",
+		"url": "http://localhost:5555/explain.html",
+		"uuid": "fdc3_explained_app",
+		"autoShow": true,
+		"defaultCentered": true,
+		"saveWindowState": false,
+		"defaultHeight": 778,
+		"defaultWidth": 728,
+		"preloadScripts": [{"url":"https://cdn.openfin.co/services/openfin/fdc3/0.2.0/openfin-fdc3.js", "mandatory": true}]
+	},
+	"runtime": {
+		"arguments": "--enable-crash-reporting",
+		"version": "14.78.47.23"
+	}
+}

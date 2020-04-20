@@ -1,0 +1,21 @@
+{
+	"startup_app": {
+		"name": "blankservice",
+		"url": "http://localhost:5555/service.html",
+		"uuid": "blankservice",
+		"autoShow": true,
+		"defaultCentered": true,
+		"saveWindowState": false,
+		"defaultHeight": 778,
+		"defaultWidth": 728
+	},
+	"runtime": {
+		"arguments": "--enable-crash-reporting",
+		"version": "stable"
+	},
+	"services": [
+		{
+			"name": "fdc3"
+		}
+	]
+}
