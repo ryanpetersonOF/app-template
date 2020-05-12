@@ -11,16 +11,10 @@
 </head>
 
 <body>
-    <div class="logo-container">
-        <img src="assets/logo.svg">
-    </div>
-    <div>
-        <h1>Hello, world!</h1>
-        <p>This is a template for an OpenFin application.</p>
-        <p id="version-number-container">
-            Current version: <span id="of-version"></span>
-        </p>
-    </div>
+    <button onclick="cycle()">Cycle Listener</button>
+    <button onclick="startApp()">Launch App</button><button onclick="closeApp()">Close App</button>
+    <div>application-started listener count: <span id="startedListeners"></span></div>
+    <div>Last event recieved timestamp: <span id="lastLog"></span></div>
     <script src="js/main.js"></script>
 </body>
 
