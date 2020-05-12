@@ -14,7 +14,27 @@
     <button onclick="cycle()">Cycle Listener</button>
     <button onclick="startApp()">Launch App</button><button onclick="closeApp()">Close App</button>
     <div>application-started listener count: <span id="startedListeners"></span></div>
+    <div>application-closed listener count: <span id="closedListeners"></span></div>
+
     <div>Last event recieved timestamp: <span id="lastLog"></span></div>
+
+    <h2>Repro steps</h2>
+    <ol>
+        <li>
+            Click 'Cycle Listener' to add one 'application-started' and one 'application-closed' system event listener.
+        </li>
+        <li>Observe listener counts</li>
+        <li>
+            Click 'Launch App'
+        </li>
+        <li>
+            Click 'Close App'
+        </li>
+        <li>Observe console logs. Observe timestamp updates.</li>
+        <li>Rinse and repeat. Eventually, events will stop firing.</li>
+    </ol>
+
+<p>Notes: Adding these events manually in console will cause the issue to be unreproducible.</p>
     <script src="js/main.js"></script>
 </body>
 

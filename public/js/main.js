@@ -7,7 +7,7 @@ function startApp() {
 }
 
 function closeApp() {
-    app.close();
+    app.quit();
 }
 
 function cycle() {
@@ -21,6 +21,8 @@ function cycle() {
 
 setInterval(() => {
     document.getElementById('startedListeners').textContent = fin.System.listenerCount('application-started');
+    document.getElementById('closedListeners').textContent = fin.System.listenerCount('application-closed');
+
 }, 250)
 
 
@@ -35,10 +37,12 @@ class test {
 
     startListenerFunc() {
         console.log(this.sig, 'app starting');
+        document.getElementById('lastLog').textContent = Date.now();
     }
 
     closedListenerFunc() {
-        console.log(this.sig, 'app closing')
+        console.log(this.sig, 'app closing');
+        document.getElementById('lastLog').textContent = Date.now();
     }
 
     teardown() {
